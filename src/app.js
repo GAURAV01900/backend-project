@@ -16,4 +16,14 @@ app.use(express.urlencoded({extended: true , limit: "20kb"})) //url data
 app.use(express.static("public")) // to serve public files requested from public folder to server
 app.use(cookieParser())
 
+//routes import
+
+import userRouter from './routes/user.routes.js'
+
+
+
+//routes declaration
+
+app.use("/api/v1/users" , userRouter)
+
 export { app }
